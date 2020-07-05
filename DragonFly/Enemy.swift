@@ -14,16 +14,14 @@ class Enemy: SKSpriteNode {
     var enemyTexture: SKTexture!
     //var currentNumber: Int
     
-    init(enemyTexture: SKTexture) {//, currentNumber: Int) {
+    init(enemyTexture: SKTexture) {
         
         let texture = enemyTexture
-        //self.currentNumber = currentNumber
         super.init(texture: texture, color: .clear, size: CGSize(width: 221, height: 204))
-        self.xScale = 0.2
-        self.yScale = -0.5
+        self.xScale = 0.15
+        self.yScale = -0.375
         self.zPosition = 20
-        //let number = currentNumber + 1
-        self.name = "sprite"// + String(number)
+        self.name = "sprite"
         
         let offsetX = self.frame.size.width * self.anchorPoint.x
         let offsetY = self.frame.size.height * self.anchorPoint.y
@@ -50,10 +48,7 @@ class Enemy: SKSpriteNode {
         path.addLine(to: CGPoint(x: 5  - offsetX, y: 68 - offsetY))
         
         path.closeSubpath()
-        
         self.physicsBody = SKPhysicsBody(polygonFrom: path)
-        
-        //self.physicsBody = SKPhysicsBody(texture: texture, alphaThreshold: 0.5, size: self.size)
         self.physicsBody?.isDynamic = true
         self.physicsBody?.categoryBitMask = BitMaskCategory.enemy.rawValue
         self.physicsBody?.collisionBitMask = BitMaskCategory.none.rawValue
@@ -63,21 +58,15 @@ class Enemy: SKSpriteNode {
     func flySpiral() {
         
         let screenSize = UIScreen.main.bounds
-        
         let timeHorizontal: Double = 3
-        let timeVertical: Double = 5
-        
+        let timeVertical: Double   = 5
         let moveLeft = SKAction.moveTo(x: 50, duration: timeHorizontal)
         moveLeft.timingMode = .easeInEaseOut
         let moveRight = SKAction.moveTo(x: screenSize.width - 50, duration: timeHorizontal)
         moveRight.timingMode = .easeInEaseOut
-        
         let randomNumber = Int(arc4random_uniform(2))
-        
         let asideMovementSequence = randomNumber == EnemyDirection.left.rawValue ? SKAction.sequence([moveLeft, moveRight]) : SKAction.sequence([moveRight, moveLeft])
-        
         let foreverAsideMovement = SKAction.repeatForever(asideMovementSequence)
-        
         let forwardMovement = SKAction.moveTo(y: -105, duration: timeVertical)
         let groupMovement = SKAction.group([foreverAsideMovement, forwardMovement])
         self.run(groupMovement)
@@ -92,25 +81,3 @@ enum EnemyDirection: Int {
     case left = 0
     case right
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

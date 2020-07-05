@@ -12,17 +12,23 @@ class PauseScene: ParentScene {
     
     override func didMove(to view: SKView) {
         
-        setHeader(withName: "pause", andBackground: "header_background")
+        setHeader(withName: "pause", andBackground: "pause")
+        let spacingMenu = CGFloat(20)
+        let buttonRestart = ButtonNode(titled: "restart", backgroundName: "restart")
+        buttonRestart.position = CGPoint(x: self.frame.midX, y: self.frame.midY - spacingMenu)
+        buttonRestart.name = "restart"
+        addChild(buttonRestart)
         
-        let titles = ["restart", "options", "resume"]
+        let buttonOptions = ButtonNode(titled: "options", backgroundName: "options")
+        buttonOptions.position = CGPoint(x: self.frame.midX, y: buttonRestart.position.y - buttonRestart.size.height - spacingMenu)
+        buttonOptions.name = "options"
+        addChild(buttonOptions)
         
-        for (index, title) in titles.enumerated() {
-            let button = ButtonNode(titled: title, backgroundName: "button_background")
-            button.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(100 * index))
-            button.name = title
-            button.label.name = title
-            addChild(button)
-        }
+        let buttonResume = ButtonNode(titled: "resume", backgroundName: "back")//нужен resume
+        buttonResume.position = CGPoint(x: self.frame.midX, y: buttonOptions.position.y - buttonOptions.size.height - spacingMenu)
+        buttonResume.name = "resume"
+        //buttonResume.label.name = "resume"
+        addChild(buttonResume)
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -39,31 +45,23 @@ class PauseScene: ParentScene {
         
         if node.name == "restart" {
             sceneManager.gameScene = nil
-            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let transition = SKTransition.fade(withDuration: 1.0)//(withDuration: 1.0)
             let gameScene = GameScene(size: self.size)
             gameScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
             
         } else if node.name == "options" {
-            
-            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let transition = SKTransition.fade(withDuration: 1.0)
             let optionsScene = OptionsScene(size: self.size)
             optionsScene.backScene = self
             optionsScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(optionsScene, transition: transition)
             
         } else if node.name == "resume" {
-            
-            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let transition = SKTransition.fade(withDuration: 1.0)
             guard let gameScene = sceneManager.gameScene else { return }
             gameScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
         }
-
     }
 }
-
-
-
-
-

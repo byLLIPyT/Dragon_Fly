@@ -25,7 +25,7 @@ class ButtonNode: SKSpriteNode {
         let texture = SKTexture(imageNamed: backgroundName)
         super.init(texture: texture, color: .clear, size: texture.size())
         if let title = title {
-            label.text = title.uppercased()
+            //label.text = title.uppercased()
         }
         addChild(label)
     }

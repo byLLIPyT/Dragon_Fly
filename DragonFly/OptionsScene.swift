@@ -13,13 +13,11 @@ class OptionsScene: ParentScene {
     var isMusic: Bool!
     var isSound: Bool!
     
-    override func didMove(to view: SKView) {
-        
+    override func didMove(to view: SKView) {        
         isMusic = gameSettings.isMusic
         isSound = gameSettings.isSound
         
-        setHeader(withName: "options", andBackground: "header_background")
-        
+        setHeader(withName: "options", andBackground: "options")
         
         let backgroundNameForMusic = isMusic == true ? "music" : "nomusic"
         
@@ -29,7 +27,6 @@ class OptionsScene: ParentScene {
         music.label.isHidden = true
         addChild(music)
         
-        
         let backgroundNameForSound = isSound == true ? "sound" : "nosound"
         
         let sound = ButtonNode(titled: nil, backgroundName: backgroundNameForSound)
@@ -37,14 +34,23 @@ class OptionsScene: ParentScene {
         sound.name = "sound"
         sound.label.isHidden = true
         addChild(sound)
+        let spacingMenu = CGFloat(20)
+        let buttonADS = ButtonNode(titled: "remove", backgroundName: "remove")
+        buttonADS.position = CGPoint(x: self.frame.midX, y: sound.position.y - sound.size.height - spacingMenu)
+        buttonADS.name = "remove"
+        addChild(buttonADS)
         
-        let back = ButtonNode(titled: "back", backgroundName: "button_background")
-        back.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 100)
+        let buttonRestore = ButtonNode(titled: "restorePurchases", backgroundName: "restorePurchases")
+        buttonRestore.position = CGPoint(x: self.frame.midX, y: buttonADS.position.y - buttonADS.size.height - spacingMenu)
+        buttonRestore.name = "restorePurchases"
+        addChild(buttonRestore)
+        
+        let back = ButtonNode(titled: "back", backgroundName: "back")
+        back.position = CGPoint(x: self.frame.midX, y: buttonRestore.position.y - buttonRestore.size.height - spacingMenu)
         back.name = "back"
         back.label.name = "back"
         addChild(back)
     }
-    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
@@ -62,7 +68,7 @@ class OptionsScene: ParentScene {
             gameSettings.isMusic = isMusic
             gameSettings.saveGameSettings()
             
-            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let transition = SKTransition.fade(withDuration: 1.0)
             guard let backScene = backScene else { return }
             backScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(backScene, transition: transition)
@@ -75,10 +81,3 @@ class OptionsScene: ParentScene {
         }
     }
 }
-
-
-
-
-
-
-

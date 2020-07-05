@@ -16,18 +16,28 @@ class MenuScene: ParentScene {
             Assets.shared.preloadAssets()
             Assets.shared.isLoaded = true
         }
-        
         setHeader(withName: nil, andBackground: "header1")
+        let spacingMenu = CGFloat(20)
+        let buttonPlay = ButtonNode(titled: "play", backgroundName: "play")
+        buttonPlay.position = CGPoint(x: self.frame.midX, y: self.frame.midY - (buttonPlay.size.height) * 0 - spacingMenu)
+        buttonPlay.name = "play"
+                
+        addChild(buttonPlay)
         
-        let titles = ["play", "options", "best"]
+        let buttonPlayEndless = ButtonNode(titled: "play", backgroundName: "play")
+        buttonPlayEndless.position = CGPoint(x: self.frame.midX, y: buttonPlay.position.y  - (buttonPlay.size.height) - spacingMenu)//- CGFloat(spacing * 1))
+        buttonPlayEndless.name = "play"
+        addChild(buttonPlayEndless)
         
-        for (index, title) in titles.enumerated() {
-            let button = ButtonNode(titled: title, backgroundName: "button_background")
-            button.position = CGPoint(x: self.frame.midX, y: self.frame.midY - CGFloat(100 * index))
-            button.name = title
-            button.label.name = title
-            addChild(button)
-        } 
+        let buttonOptions = ButtonNode(titled: "options", backgroundName: "options")
+        buttonOptions.position = CGPoint(x: self.frame.midX, y: buttonPlayEndless.position.y  - (buttonPlay.size.height) - spacingMenu)//- CGFloat(spacing * 2))
+        buttonOptions.name = "options"
+        addChild(buttonOptions)
+        
+        let buttonBest = ButtonNode(titled: "best", backgroundName: "best")
+        buttonBest.position = CGPoint(x: self.frame.midX, y: buttonOptions.position.y  - (buttonPlay.size.height) - spacingMenu)//- CGFloat(spacing * 3))
+        buttonBest.name = "best"
+        addChild(buttonBest)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -35,22 +45,18 @@ class MenuScene: ParentScene {
         let node = self.atPoint(location)
         
         if node.name == "play" {
-            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let transition = SKTransition.fade(withDuration: 1.0)
             let gameScene = GameScene(size: self.size)
             gameScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
-            
         }  else if node.name == "options" {
-            
-            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let transition = SKTransition.fade(withDuration: 1.0)
             let optionsScene = OptionsScene(size: self.size)
             optionsScene.backScene = self
             optionsScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(optionsScene, transition: transition)
-            
         }  else if node.name == "best" {
-            
-            let transition = SKTransition.crossFade(withDuration: 1.0)
+            let transition = SKTransition.fade(withDuration: 1.0)
             let bestScene = BestScene(size: self.size)
             bestScene.backScene = self
             bestScene.scaleMode = .aspectFill

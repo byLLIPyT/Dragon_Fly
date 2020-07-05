@@ -25,11 +25,10 @@ class PlayerPlane: SKSpriteNode {
         let atlas = Assets.shared.playerPlaneAtlas
         let playerPlaneTexture = atlas.textureNamed("airplane_3ver2_13")
         let playerPlane = PlayerPlane(texture: playerPlaneTexture)
-        playerPlane.setScale(0.4)
+        playerPlane.setScale(0.6)
         playerPlane.position = point
         playerPlane.zPosition = 40
         
-
         let offsetX = playerPlane.frame.size.width * playerPlane.anchorPoint.x
         let offsetY = playerPlane.frame.size.height * playerPlane.anchorPoint.y
         
@@ -120,7 +119,6 @@ class PlayerPlane: SKSpriteNode {
             callback(array)
         }
     }
-    
     
     fileprivate func movementDirectionCheck() {
     

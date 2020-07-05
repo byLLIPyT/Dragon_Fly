@@ -11,6 +11,7 @@ import SpriteKit
 class HUD: SKNode {
 
     let scoreBackground = SKSpriteNode(imageNamed: "scores")
+    
     let scoreLabel = SKLabelNode(text: "0")
     var score: Int = 0 {
         didSet{
@@ -21,10 +22,13 @@ class HUD: SKNode {
     let life1 = SKSpriteNode(imageNamed: "life")
     let life2 = SKSpriteNode(imageNamed: "life")
     let life3 = SKSpriteNode(imageNamed: "life")
+    let life4 = SKSpriteNode(imageNamed: "life")
+    let life5 = SKSpriteNode(imageNamed: "life")
     
     func configureUI(screenSize: CGSize) {
-        scoreBackground.position = CGPoint(x: scoreBackground.size.width + 10, y: screenSize.height - scoreBackground.size.height / 2 - 10)
         scoreBackground.anchorPoint = CGPoint(x: 1.0, y: 0.5)
+        scoreBackground.position = CGPoint(x: scoreBackground.size.width, y: screenSize.height - scoreBackground.size.height / 2 - 20)
+        scoreBackground.setScale(CGFloat(0.8))
         scoreBackground.zPosition = 99
         addChild(scoreBackground)
         
@@ -42,13 +46,16 @@ class HUD: SKNode {
         menuButton.name = "pause"
         addChild(menuButton)
         
-        let lifes = [life1, life2, life3]
+        let lifes = [life1, life2, life3, life4, life5]
         for (index, life) in lifes.enumerated() {
-            life.position = CGPoint(x: screenSize.width - CGFloat(index + 1) * (life.size.width + 3), y: 20)
+            let liveScale = CGFloat(0.6)
+            let pos = CGPoint(x: screenSize.width - CGFloat(index + 1) * (life.size.width * liveScale + 5), y: 20)
+            
+            life.position = pos
             life.zPosition = 100
+            life.setScale(liveScale)
             life.anchorPoint = CGPoint(x: 0.0, y: 0.0)
             addChild(life)
         }
     }
-    
 }
