@@ -26,11 +26,6 @@ class ParentScene: SKScene {
         
         super.init(size: size)
         backgroundColor = SKColor(red: 0.25, green: 0.75, blue: 0.94, alpha: 1.0)
-//        let background = SKSpriteNode(imageNamed: "backgroundMenu")
-//        background.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-//        background.zPosition = 99
-//        background.size = self.size
-//        self.addChild(background)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -13,27 +13,15 @@ import StoreKit
 class PayWallScene: ParentScene {
     
     var dragonImage = SKSpriteNode()
-    
     override func didMove(to view: SKView) {
         
         setHeader(withName: "paywall", andBackground: "paywall")
-        var newTitle = "Full version"
+        var newTitle = "Amazing dragon!"
         if IAPManager.shared.products.count > 0 {
             newTitle = "Amazing dragon! / \((self.priceStringFor(product: IAPManager.shared.products[0])))"
         }
-        
         let buttonADS = ButtonNode(titled: "remove", backgroundName: "emptyButton", newTitle: newTitle)
-        let spacingMenu = CGFloat(20)
-        
-        
-        
-        
-        
-        let currentProducts = IAPManager.shared.products
-        print("Количество найденных покупок - \(currentProducts.count)")
-        
-                
-        
+        let spacingMenu = CGFloat(20)        
         let buttonRestore = ButtonNode(titled: "restorePurchases", backgroundName: "restorePurchases")
         let back = ButtonNode(titled: "back", backgroundName: "back")
         
@@ -42,12 +30,10 @@ class PayWallScene: ParentScene {
         buttonADS.label.name = "remove"
         addChild(buttonADS)
         
-        //let buttonRestore = ButtonNode(titled: "restorePurchases", backgroundName: "restorePurchases")
         buttonRestore.position = CGPoint(x: self.frame.midX, y: self.frame.minY + back.size.height + buttonRestore.size.height + spacingMenu * 2)
         buttonRestore.name = "restorePurchases"
         addChild(buttonRestore)
         
-        //let back = ButtonNode(titled: "back", backgroundName: "back")
         back.position = CGPoint(x: self.frame.midX, y: self.frame.minY + back.size.height + spacingMenu)
         back.name = "back"
         addChild(back)
@@ -64,39 +50,30 @@ class PayWallScene: ParentScene {
         let location = touches.first!.location(in: self)
         let node = self.atPoint(location)
         
-        if node.name == "play" {
-            let transition = SKTransition.fade(withDuration: 1.0)
-            let gameScene = GameScene(size: self.size)
-            gameScene.scaleMode = .aspectFill
-            self.scene!.view?.presentScene(gameScene, transition: transition)
-        }  else if node.name == "endlessGame" {
-            let transition = SKTransition.fade(withDuration: 1.0)
-            EndlessGame.shared.endlessGame = true
-            let optionsScene = GameScene(size: self.size)
-            optionsScene.backScene = self
-            optionsScene.scaleMode = .aspectFill
-            self.scene!.view?.presentScene(optionsScene, transition: transition)
-        }  else if node.name == "options" {
+        if node.name == "remove" {
+            
+            if IAPManager.shared.products.count > 0 {
+                let identifier = IAPManager.shared.products[0].productIdentifier
+                IAPManager.shared.purchase(productWith: identifier)
+            }
+        }  else if node.name == "restorePurchases" {
+            
+            IAPManager.shared.restoreCompletedTransactions()
+            let alertController = UIAlertController(title: "Покупки восстановлены", message: nil, preferredStyle:  .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        }  else if node.name == "back" {
             let transition = SKTransition.fade(withDuration: 1.0)
             let optionsScene = OptionsScene(size: self.size)
             optionsScene.backScene = self
             optionsScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(optionsScene, transition: transition)
-        }  else if node.name == "best" {
-            let transition = SKTransition.fade(withDuration: 1.0)
-            let bestScene = BestScene(size: self.size)
-            bestScene.backScene = self
-            bestScene.scaleMode = .aspectFill
-            self.scene!.view?.presentScene(bestScene, transition: transition)
         }
     }
     
     private func priceStringFor(product: SKProduct) -> String {
-        
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .currency
         numberFormatter.locale = product.priceLocale
-        
         return numberFormatter.string(from: product.price)!
     }
 }

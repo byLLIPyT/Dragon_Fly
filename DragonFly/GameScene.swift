@@ -139,14 +139,12 @@ class GameScene: ParentScene {
             
             let randomNumber = Int(arc4random_uniform(2))
             let arrayOfAtlases = [enemyTextureAtlas1, enemyTextureAtlas2]
-            print("!!!!!!! \(randomNumber)")
             let textureAtlas = arrayOfAtlases[randomNumber]
             
             let waitAction = SKAction.wait(forDuration: 3.0)
             let spawnEnemy = SKAction.run({ [unowned self] in
                 let textureNames = textureAtlas.textureNames.sorted()
                 let texture = textureAtlas.textureNamed(textureNames[12])
-                print("@@@@@@\(texture)")
                 let enemy = Enemy(enemyTexture: texture)//, currentNumber: )
                 
                 enemy.position = CGPoint(x: CGFloat(arc4random_uniform(UInt32(self.size.width - 30))), y: self.size.height + 110)

@@ -28,10 +28,7 @@ class HUD: SKNode {
     func configureUI(screenSize: CGSize) {
         scoreBackground.anchorPoint = CGPoint(x: 1.0, y: 0.5)
         scoreBackground.position = CGPoint(x: scoreBackground.size.width + 5, y: screenSize.height - scoreBackground.size.height / 2 - 30)
-//        print(scoreBackground.size.width)
-//        print(screenSize.height)
-//        print(screenSize.height - scoreBackground.size.height / 2 - 20)
-        
+
         scoreBackground.setScale(CGFloat(0.8))
         scoreBackground.zPosition = 99
         addChild(scoreBackground)
