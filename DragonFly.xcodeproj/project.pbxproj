@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		AB34055F24AF6A1100C2DD3E /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB34055E24AF6A1100C2DD3E /* LaunchScreen.swift */; };
 		AB37839323D8EBEF004911E4 /* DamageShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37839223D8EBEF004911E4 /* DamageShot.swift */; };
+		AB501CAA24D7FAFE00374095 /* Phenomena-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB501CA424D7FAFE00374095 /* Phenomena-Black.otf */; };
+		AB501CAB24D7FAFE00374095 /* Phenomena-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB501CA524D7FAFE00374095 /* Phenomena-Thin.otf */; };
+		AB501CAC24D7FAFE00374095 /* Phenomena-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB501CA624D7FAFE00374095 /* Phenomena-Regular.otf */; };
+		AB501CAD24D7FAFE00374095 /* Phenomena-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB501CA724D7FAFE00374095 /* Phenomena-ExtraBold.otf */; };
+		AB501CAE24D7FAFE00374095 /* Phenomena-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB501CA824D7FAFE00374095 /* Phenomena-Light.otf */; };
+		AB501CAF24D7FAFE00374095 /* Phenomena-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB501CA924D7FAFE00374095 /* Phenomena-Bold.otf */; };
+		AB501CB124D7FB0600374095 /* Phenomena-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB501CB024D7FB0600374095 /* Phenomena-ExtraLight.otf */; };
+		AB501CB324D8346C00374095 /* EndlessGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB501CB224D8346C00374095 /* EndlessGame.swift */; };
+		AB68A44424FFC76B006D4BC4 /* PayWallScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB68A44324FFC76B006D4BC4 /* PayWallScene.swift */; };
+		AB7EAE0924E1D617005BC133 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB7EAE0824E1D617005BC133 /* StoreKit.framework */; };
+		AB7EAE0C24E1D7E5005BC133 /* IAPProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EAE0B24E1D7E5005BC133 /* IAPProducts.swift */; };
+		AB7EAE0E24E1D7F7005BC133 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EAE0D24E1D7F7005BC133 /* IAPManager.swift */; };
+		AB7EAE1024E1D848005BC133 /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7EAE0F24E1D848005BC133 /* Persistance.swift */; };
 		ABE341D723DA38DE00C6F9CF /* RedPowerUp.atlas in Resources */ = {isa = PBXBuildFile; fileRef = ABE341D623DA38DE00C6F9CF /* RedPowerUp.atlas */; };
 		ABE341D923DA3A1400C6F9CF /* YellowPowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE341D823DA3A1400C6F9CF /* YellowPowerUp.swift */; };
 		ABE341DB23DA3A7A00C6F9CF /* RedPowerUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE341DA23DA3A7A00C6F9CF /* RedPowerUp.swift */; };
@@ -56,6 +69,19 @@
 /* Begin PBXFileReference section */
 		AB34055E24AF6A1100C2DD3E /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		AB37839223D8EBEF004911E4 /* DamageShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageShot.swift; sourceTree = "<group>"; };
+		AB501CA424D7FAFE00374095 /* Phenomena-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Phenomena-Black.otf"; path = "../../phenomena/Phenomena-Black.otf"; sourceTree = "<group>"; };
+		AB501CA524D7FAFE00374095 /* Phenomena-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Phenomena-Thin.otf"; path = "../../phenomena/Phenomena-Thin.otf"; sourceTree = "<group>"; };
+		AB501CA624D7FAFE00374095 /* Phenomena-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Phenomena-Regular.otf"; path = "../../phenomena/Phenomena-Regular.otf"; sourceTree = "<group>"; };
+		AB501CA724D7FAFE00374095 /* Phenomena-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Phenomena-ExtraBold.otf"; path = "../../phenomena/Phenomena-ExtraBold.otf"; sourceTree = "<group>"; };
+		AB501CA824D7FAFE00374095 /* Phenomena-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Phenomena-Light.otf"; path = "../../phenomena/Phenomena-Light.otf"; sourceTree = "<group>"; };
+		AB501CA924D7FAFE00374095 /* Phenomena-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Phenomena-Bold.otf"; path = "../../phenomena/Phenomena-Bold.otf"; sourceTree = "<group>"; };
+		AB501CB024D7FB0600374095 /* Phenomena-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Phenomena-ExtraLight.otf"; path = "../../phenomena/Phenomena-ExtraLight.otf"; sourceTree = "<group>"; };
+		AB501CB224D8346C00374095 /* EndlessGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessGame.swift; sourceTree = "<group>"; };
+		AB68A44324FFC76B006D4BC4 /* PayWallScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayWallScene.swift; sourceTree = "<group>"; };
+		AB7EAE0824E1D617005BC133 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		AB7EAE0B24E1D7E5005BC133 /* IAPProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPProducts.swift; sourceTree = "<group>"; };
+		AB7EAE0D24E1D7F7005BC133 /* IAPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
+		AB7EAE0F24E1D848005BC133 /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		ABE341D523DA38CD00C6F9CF /* YellowPowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = YellowPowerUp.atlas; sourceTree = "<group>"; };
 		ABE341D623DA38DE00C6F9CF /* RedPowerUp.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = RedPowerUp.atlas; sourceTree = "<group>"; };
 		ABE341D823DA3A1400C6F9CF /* YellowPowerUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YellowPowerUp.swift; sourceTree = "<group>"; };
@@ -107,12 +133,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7EAE0924E1D617005BC133 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB501CA324D7FAED00374095 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AB501CA424D7FAFE00374095 /* Phenomena-Black.otf */,
+				AB501CA924D7FAFE00374095 /* Phenomena-Bold.otf */,
+				AB501CA724D7FAFE00374095 /* Phenomena-ExtraBold.otf */,
+				AB501CB024D7FB0600374095 /* Phenomena-ExtraLight.otf */,
+				AB501CA824D7FAFE00374095 /* Phenomena-Light.otf */,
+				AB501CA624D7FAFE00374095 /* Phenomena-Regular.otf */,
+				AB501CA524D7FAFE00374095 /* Phenomena-Thin.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		AB7EAE0724E1D617005BC133 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB7EAE0824E1D617005BC133 /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB7EAE0A24E1D7D4005BC133 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AB7EAE0B24E1D7E5005BC133 /* IAPProducts.swift */,
+				AB7EAE0D24E1D7F7005BC133 /* IAPManager.swift */,
+				AB7EAE0F24E1D848005BC133 /* Persistance.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
 		C90F3A341ED3252D00BF03F5 /* Particles */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +239,7 @@
 				C957EC4F1ECB212400BE6615 /* BitMaskCategory.swift */,
 				C90F3A281ECF07E700BF03F5 /* SceneManager.swift */,
 				C959DB741ED7F69E00C66E9F /* GameSettings.swift */,
+				AB501CB224D8346C00374095 /* EndlessGame.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -188,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				C9BA01331EC9FA3F00520CAA /* MenuScene.swift */,
+				AB68A44324FFC76B006D4BC4 /* PayWallScene.swift */,
 				C90F3A261ECEFEB000BF03F5 /* PauseScene.swift */,
 				C90F3A301ED31E9B00BF03F5 /* BestScene.swift */,
 				AB34055E24AF6A1100C2DD3E /* LaunchScreen.swift */,
@@ -219,6 +280,7 @@
 			children = (
 				C9CB4DF61EA7843F001BDB4E /* DragonFly */,
 				C9CB4DF51EA7843F001BDB4E /* Products */,
+				AB7EAE0724E1D617005BC133 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +295,8 @@
 		C9CB4DF61EA7843F001BDB4E /* DragonFly */ = {
 			isa = PBXGroup;
 			children = (
+				AB7EAE0A24E1D7D4005BC133 /* Services */,
+				AB501CA324D7FAED00374095 /* Fonts */,
 				C90F3A341ED3252D00BF03F5 /* Particles */,
 				C957EC5A1ECDD7E300BE6615 /* Scenes */,
 				C957EC591ECDD7D300BE6615 /* Managers */,
@@ -306,11 +370,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CA50E71EC5956E00970D2E /* Enemy_2.atlas in Resources */,
+				AB501CAA24D7FAFE00374095 /* Phenomena-Black.otf in Resources */,
+				AB501CAF24D7FAFE00374095 /* Phenomena-Bold.otf in Resources */,
+				AB501CB124D7FB0600374095 /* Phenomena-ExtraLight.otf in Resources */,
 				C9BA01291EC9D1D100520CAA /* YellowShot.atlas in Resources */,
 				C9CA50E31EC48BE000970D2E /* Enemy_1.atlas in Resources */,
+				AB501CAB24D7FAFE00374095 /* Phenomena-Thin.otf in Resources */,
+				AB501CAD24D7FAFE00374095 /* Phenomena-ExtraBold.otf in Resources */,
 				C9CB4E031EA7843F001BDB4E /* Main.storyboard in Resources */,
+				AB501CAC24D7FAFE00374095 /* Phenomena-Regular.otf in Resources */,
 				C92FA9D51EBC7080008DF225 /* GreenPowerUp.atlas in Resources */,
 				C9813BCF1EAE15D800E20151 /* PlayerPlane.atlas in Resources */,
+				AB501CAE24D7FAFE00374095 /* Phenomena-Light.otf in Resources */,
 				C9544EEF1ED7E57D008C97DB /* backgroundMusic.m4a in Resources */,
 				ABE341D723DA38DE00C6F9CF /* RedPowerUp.atlas in Resources */,
 				C90F3A331ED3252600BF03F5 /* EnemyExplosion.sks in Resources */,
@@ -344,6 +415,7 @@
 				C9CA50E11EC48B8100970D2E /* Enemy.swift in Sources */,
 				C9544EDC1ED5D894008C97DB /* GameOverScene.swift in Sources */,
 				AB37839323D8EBEF004911E4 /* DamageShot.swift in Sources */,
+				AB68A44424FFC76B006D4BC4 /* PayWallScene.swift in Sources */,
 				C90F3A291ECF07E700BF03F5 /* SceneManager.swift in Sources */,
 				C945F6321EC6DA76003E5D62 /* GreenPowerUp.swift in Sources */,
 				ABE341DB23DA3A7A00C6F9CF /* RedPowerUp.swift in Sources */,
@@ -352,8 +424,12 @@
 				C90F3A311ED31E9B00BF03F5 /* BestScene.swift in Sources */,
 				C957EC501ECB212400BE6615 /* BitMaskCategory.swift in Sources */,
 				C9BA01341EC9FA3F00520CAA /* MenuScene.swift in Sources */,
+				AB7EAE1024E1D848005BC133 /* Persistance.swift in Sources */,
 				C90F3A2D1ED03BAB00BF03F5 /* ParentScene.swift in Sources */,
+				AB7EAE0E24E1D7F7005BC133 /* IAPManager.swift in Sources */,
 				C90F3A271ECEFEB000BF03F5 /* PauseScene.swift in Sources */,
+				AB501CB324D8346C00374095 /* EndlessGame.swift in Sources */,
+				AB7EAE0C24E1D7E5005BC133 /* IAPProducts.swift in Sources */,
 				C957EC541ECDD5E800BE6615 /* HUD.swift in Sources */,
 				C9BA012C1EC9D20400520CAA /* Shot.swift in Sources */,
 				C9CB4E121EA78A6D001BDB4E /* Background.swift in Sources */,
@@ -506,7 +582,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.neosoft.LuckyDragon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neosoft.LuckyDragon;
 				PRODUCT_NAME = "Lucky Dragon";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -522,7 +598,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.neosoft.LuckyDragon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.neosoft.LuckyDragon;
 				PRODUCT_NAME = "Lucky Dragon";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

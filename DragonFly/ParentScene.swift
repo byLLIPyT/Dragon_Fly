@@ -15,21 +15,22 @@ class ParentScene: SKScene {
     var backScene: SKScene?
     
     func setHeader(withName name: String?, andBackground backgroundName: String) {
+        if backgroundName != "paywall" {
         let header = ButtonNode(titled: name, backgroundName: backgroundName)
         header.position = CGPoint(x: self.frame.midX, y: self.frame.midY + 150)
         self.addChild(header)
+        }
     }
     
     override init(size: CGSize) {
-        super.init(size: size)
         
+        super.init(size: size)
         backgroundColor = SKColor(red: 0.25, green: 0.75, blue: 0.94, alpha: 1.0)
 //        let background = SKSpriteNode(imageNamed: "backgroundMenu")
 //        background.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
 //        background.zPosition = 99
 //        background.size = self.size
 //        self.addChild(background)
-                
     }
     
     required init?(coder aDecoder: NSCoder) {

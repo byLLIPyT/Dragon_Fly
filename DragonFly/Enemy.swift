@@ -17,7 +17,7 @@ class Enemy: SKSpriteNode {
     init(enemyTexture: SKTexture) {
         
         let texture = enemyTexture
-        super.init(texture: texture, color: .clear, size: CGSize(width: 221, height: 204))
+        super.init(texture: texture, color: .clear, size: CGSize(width: 408, height: 204))
         self.xScale = 0.15
         self.yScale = -0.375
         self.zPosition = 20

@@ -23,7 +23,7 @@ class BestScene: ParentScene {
             let button = ButtonNode(titled: title, backgroundName: "back")
             button.position = CGPoint(x: self.frame.midX, y: self.frame.midY - 200 + CGFloat(100 * index))
             button.name = title
-            button.label.name = title
+            //button.label.name = title
             addChild(button)
         }
         

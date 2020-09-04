@@ -25,7 +25,7 @@ class PlayerPlane: SKSpriteNode {
         let atlas = Assets.shared.playerPlaneAtlas
         let playerPlaneTexture = atlas.textureNamed("airplane_3ver2_13")
         let playerPlane = PlayerPlane(texture: playerPlaneTexture)
-        playerPlane.setScale(0.6)
+        playerPlane.setScale(0.4)
         playerPlane.position = point
         playerPlane.zPosition = 40
         

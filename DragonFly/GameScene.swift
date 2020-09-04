@@ -139,12 +139,14 @@ class GameScene: ParentScene {
             
             let randomNumber = Int(arc4random_uniform(2))
             let arrayOfAtlases = [enemyTextureAtlas1, enemyTextureAtlas2]
+            print("!!!!!!! \(randomNumber)")
             let textureAtlas = arrayOfAtlases[randomNumber]
             
             let waitAction = SKAction.wait(forDuration: 3.0)
             let spawnEnemy = SKAction.run({ [unowned self] in
                 let textureNames = textureAtlas.textureNames.sorted()
                 let texture = textureAtlas.textureNamed(textureNames[12])
+                print("@@@@@@\(texture)")
                 let enemy = Enemy(enemyTexture: texture)//, currentNumber: )
                 
                 enemy.position = CGPoint(x: CGFloat(arc4random_uniform(UInt32(self.size.width - 30))), y: self.size.height + 110)
@@ -331,12 +333,16 @@ extension GameScene: SKPhysicsContactDelegate {
             if contact.bodyA.node?.name == "sprite" {
                 if contact.bodyA.node?.parent != nil {
                     contact.bodyA.node?.removeFromParent()
-                    lives -= 1
+                    if !EndlessGame.shared.endlessGame {
+                        lives -= 1
+                    }
                 }
             } else {
                 if contact.bodyB.node?.parent != nil {
                     contact.bodyB.node?.removeFromParent()
-                    lives -= 1
+                    if !EndlessGame.shared.endlessGame {
+                        lives -= 1
+                    }
                 }
             }
             addChild(explosion!)

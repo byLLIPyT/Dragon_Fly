@@ -24,9 +24,9 @@ class MenuScene: ParentScene {
                 
         addChild(buttonPlay)
         
-        let buttonPlayEndless = ButtonNode(titled: "play", backgroundName: "play")
+        let buttonPlayEndless = ButtonNode(titled: "endlessGame", backgroundName: "endlessGame")
         buttonPlayEndless.position = CGPoint(x: self.frame.midX, y: buttonPlay.position.y  - (buttonPlay.size.height) - spacingMenu)//- CGFloat(spacing * 1))
-        buttonPlayEndless.name = "play"
+        buttonPlayEndless.name = "endlessGame"
         addChild(buttonPlayEndless)
         
         let buttonOptions = ButtonNode(titled: "options", backgroundName: "options")
@@ -49,6 +49,13 @@ class MenuScene: ParentScene {
             let gameScene = GameScene(size: self.size)
             gameScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
+        }  else if node.name == "endlessGame" {
+            let transition = SKTransition.fade(withDuration: 1.0)
+            EndlessGame.shared.endlessGame = true
+            let optionsScene = GameScene(size: self.size)
+            optionsScene.backScene = self
+            optionsScene.scaleMode = .aspectFill
+            self.scene!.view?.presentScene(optionsScene, transition: transition)
         }  else if node.name == "options" {
             let transition = SKTransition.fade(withDuration: 1.0)
             let optionsScene = OptionsScene(size: self.size)

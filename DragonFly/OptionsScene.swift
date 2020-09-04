@@ -34,21 +34,32 @@ class OptionsScene: ParentScene {
         sound.name = "sound"
         sound.label.isHidden = true
         addChild(sound)
+        
+        let currentProducts = IAPManager.shared.products
+        print("Количество найденных покупок - \(currentProducts.count)")
+        var newTitle = "Full version"
+        if IAPManager.shared.products.count > 0 {
+            //newTitle = "Full version / \((self.priceStringFor(product: IAPManager.shared.products[0])))"
+            newTitle = "Full version"
+            //self.payButton.setTitle("Полная версия / \(self.priceStringFor(product: IAPManager.shared.products[0]))", for: .normal)
+        }
+        
         let spacingMenu = CGFloat(20)
-        let buttonADS = ButtonNode(titled: "remove", backgroundName: "remove")
+        //let newTitle = "Full version / 229 $"
+        let buttonADS = ButtonNode(titled: "remove", backgroundName: "emptyButton", newTitle: newTitle)
         buttonADS.position = CGPoint(x: self.frame.midX, y: sound.position.y - sound.size.height - spacingMenu)
         buttonADS.name = "remove"
+        buttonADS.label.name = "remove"
         addChild(buttonADS)
         
-        let buttonRestore = ButtonNode(titled: "restorePurchases", backgroundName: "restorePurchases")
-        buttonRestore.position = CGPoint(x: self.frame.midX, y: buttonADS.position.y - buttonADS.size.height - spacingMenu)
-        buttonRestore.name = "restorePurchases"
-        addChild(buttonRestore)
+//        let buttonRestore = ButtonNode(titled: "restorePurchases", backgroundName: "restorePurchases")
+//        buttonRestore.position = CGPoint(x: self.frame.midX, y: buttonADS.position.y - buttonADS.size.height - spacingMenu)
+//        buttonRestore.name = "restorePurchases"
+//        addChild(buttonRestore)
         
         let back = ButtonNode(titled: "back", backgroundName: "back")
-        back.position = CGPoint(x: self.frame.midX, y: buttonRestore.position.y - buttonRestore.size.height - spacingMenu)
+        back.position = CGPoint(x: self.frame.midX, y: buttonADS.position.y - buttonADS.size.height - spacingMenu)
         back.name = "back"
-        back.label.name = "back"
         addChild(back)
     }
     
@@ -56,9 +67,27 @@ class OptionsScene: ParentScene {
         let location = touches.first!.location(in: self)
         let node = self.atPoint(location)
         
+        
         if node.name == "music" {
             isMusic = !isMusic
             update(node: node as! SKSpriteNode, property: isMusic)
+//        } else if node.name == "restorePurchases" {
+//            print("Покупки восстановлены")
+//            IAPManager.shared.restoreCompletedTransactions()
+////            let alertController = UIAlertController(title: "Покупки восстановлены", message: nil, preferredStyle:  .alert)
+////            alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+        } else if node.name == "remove" {
+//            print("Покупка совершена")
+//            if IAPManager.shared.products.count > 0 {
+//                let identifier = IAPManager.shared.products[0].productIdentifier
+//                IAPManager.shared.purchase(productWith: identifier)
+//            }
+            let transition = SKTransition.fade(withDuration: 1.0)
+            let pauseScene = PayWallScene(size: self.size)
+            pauseScene.scaleMode = .aspectFill
+            self.scene?.isPaused = true
+            self.scene!.view?.presentScene(pauseScene, transition: transition)
         } else if node.name == "sound" {
             isSound = !isSound
             update(node: node as! SKSpriteNode, property: isSound)
