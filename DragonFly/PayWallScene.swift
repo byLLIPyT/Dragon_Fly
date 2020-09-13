@@ -38,11 +38,20 @@ class PayWallScene: ParentScene {
         back.name = "back"
         addChild(back)
         
-        let image = UIImage(named: "dragonImage")
-        let heightDragon = image!.size.height
+        let image = UIImage(named: "MobileDragon")
         let texture = SKTexture(image: image!)
         dragonImage =  SKSpriteNode(texture: texture)
-        dragonImage.position = CGPoint(x: self.frame.midX, y: buttonADS.frame.midY + CGFloat(heightDragon / 2) + spacingMenu * 5)
+        let ratio = image!.size.height / image!.size.width
+        let heightButtons = back.size.height + buttonRestore.size.height + spacingMenu * 3
+        var heightD = (self.frame.height - heightButtons - spacingMenu * 2) * 0.8
+        var widthD = heightD / ratio
+        if widthD > self.frame.width * 0.9 {
+            widthD = self.frame.width * 0.9
+            heightD = widthD * ratio
+        }
+        dragonImage.anchorPoint = CGPoint(x: 0.5, y: 1)
+        dragonImage.position = CGPoint(x: self.frame.width / 2, y: self.frame.height - spacingMenu * 3)
+        dragonImage.size = CGSize(width: heightD / ratio, height: heightD)
         addChild(dragonImage)        
     }
     
@@ -63,7 +72,7 @@ class PayWallScene: ParentScene {
             alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         }  else if node.name == "back" {
             let transition = SKTransition.fade(withDuration: 1.0)
-            let optionsScene = OptionsScene(size: self.size)
+            let optionsScene = PauseScene(size: self.size)
             optionsScene.backScene = self
             optionsScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(optionsScene, transition: transition)

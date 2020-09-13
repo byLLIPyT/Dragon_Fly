@@ -77,7 +77,7 @@ class OptionsScene: ParentScene {
             gameSettings.isMusic = isMusic
             gameSettings.saveGameSettings()
             let transition = SKTransition.fade(withDuration: 1.0)
-            let optionsScene = MenuScene(size: self.size)
+            let optionsScene = PauseScene(size: self.size)
             optionsScene.backScene = self
             optionsScene.scaleMode = .aspectFill
             self.scene!.view?.presentScene(optionsScene, transition: transition)

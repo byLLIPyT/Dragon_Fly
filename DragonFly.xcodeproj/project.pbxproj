@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB2E86BA250DCDB6005456B7 /* Enemy_6.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AB2E86B7250DCDB4005456B7 /* Enemy_6.atlas */; };
+		AB2E86BB250DCDB6005456B7 /* Enemy_4.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AB2E86B8250DCDB5005456B7 /* Enemy_4.atlas */; };
+		AB2E86BC250DCDB6005456B7 /* Enemy_5.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AB2E86B9250DCDB6005456B7 /* Enemy_5.atlas */; };
+		AB2E86BE250DCDC9005456B7 /* Enemy_3.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AB2E86BD250DCDC9005456B7 /* Enemy_3.atlas */; };
+		AB2E86C0250DD211005456B7 /* PlayerPlanePremium.atlas in Resources */ = {isa = PBXBuildFile; fileRef = AB2E86BF250DD211005456B7 /* PlayerPlanePremium.atlas */; };
 		AB34055F24AF6A1100C2DD3E /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB34055E24AF6A1100C2DD3E /* LaunchScreen.swift */; };
 		AB37839323D8EBEF004911E4 /* DamageShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB37839223D8EBEF004911E4 /* DamageShot.swift */; };
 		AB501CAA24D7FAFE00374095 /* Phenomena-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = AB501CA424D7FAFE00374095 /* Phenomena-Black.otf */; };
@@ -67,6 +72,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB2E86B7250DCDB4005456B7 /* Enemy_6.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_6.atlas; sourceTree = "<group>"; };
+		AB2E86B8250DCDB5005456B7 /* Enemy_4.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_4.atlas; sourceTree = "<group>"; };
+		AB2E86B9250DCDB6005456B7 /* Enemy_5.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_5.atlas; sourceTree = "<group>"; };
+		AB2E86BD250DCDC9005456B7 /* Enemy_3.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Enemy_3.atlas; sourceTree = "<group>"; };
+		AB2E86BF250DD211005456B7 /* PlayerPlanePremium.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = PlayerPlanePremium.atlas; sourceTree = "<group>"; };
 		AB34055E24AF6A1100C2DD3E /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		AB37839223D8EBEF004911E4 /* DamageShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamageShot.swift; sourceTree = "<group>"; };
 		AB501CA424D7FAFE00374095 /* Phenomena-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Phenomena-Black.otf"; path = "../../phenomena/Phenomena-Black.otf"; sourceTree = "<group>"; };
@@ -263,6 +273,11 @@
 		C9BA012A1EC9D1EB00520CAA /* Atlases */ = {
 			isa = PBXGroup;
 			children = (
+				AB2E86BF250DD211005456B7 /* PlayerPlanePremium.atlas */,
+				AB2E86BD250DCDC9005456B7 /* Enemy_3.atlas */,
+				AB2E86B8250DCDB5005456B7 /* Enemy_4.atlas */,
+				AB2E86B9250DCDB6005456B7 /* Enemy_5.atlas */,
+				AB2E86B7250DCDB4005456B7 /* Enemy_6.atlas */,
 				C9BA01281EC9D1D100520CAA /* YellowShot.atlas */,
 				C9CA50E21EC48BE000970D2E /* Enemy_1.atlas */,
 				C9CA50E61EC5956E00970D2E /* Enemy_2.atlas */,
@@ -376,16 +391,21 @@
 				C9BA01291EC9D1D100520CAA /* YellowShot.atlas in Resources */,
 				C9CA50E31EC48BE000970D2E /* Enemy_1.atlas in Resources */,
 				AB501CAB24D7FAFE00374095 /* Phenomena-Thin.otf in Resources */,
+				AB2E86C0250DD211005456B7 /* PlayerPlanePremium.atlas in Resources */,
 				AB501CAD24D7FAFE00374095 /* Phenomena-ExtraBold.otf in Resources */,
 				C9CB4E031EA7843F001BDB4E /* Main.storyboard in Resources */,
 				AB501CAC24D7FAFE00374095 /* Phenomena-Regular.otf in Resources */,
 				C92FA9D51EBC7080008DF225 /* GreenPowerUp.atlas in Resources */,
 				C9813BCF1EAE15D800E20151 /* PlayerPlane.atlas in Resources */,
 				AB501CAE24D7FAFE00374095 /* Phenomena-Light.otf in Resources */,
+				AB2E86BA250DCDB6005456B7 /* Enemy_6.atlas in Resources */,
 				C9544EEF1ED7E57D008C97DB /* backgroundMusic.m4a in Resources */,
 				ABE341D723DA38DE00C6F9CF /* RedPowerUp.atlas in Resources */,
 				C90F3A331ED3252600BF03F5 /* EnemyExplosion.sks in Resources */,
 				C9CB4E051EA7843F001BDB4E /* Assets.xcassets in Resources */,
+				AB2E86BC250DCDB6005456B7 /* Enemy_5.atlas in Resources */,
+				AB2E86BE250DCDC9005456B7 /* Enemy_3.atlas in Resources */,
+				AB2E86BB250DCDB6005456B7 /* Enemy_4.atlas in Resources */,
 				ABE341DC23DA436F00C6F9CF /* YellowPowerUp.atlas in Resources */,
 				C945F62E1EC6D809003E5D62 /* BluePowerUp.atlas in Resources */,
 				C9544EF01ED7E57D008C97DB /* hitSound.wav in Resources */,
@@ -581,7 +601,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/DragonFly/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.neosoft.LuckyDragon;
 				PRODUCT_NAME = "Lucky Dragon";
 				SWIFT_VERSION = 5.0;
@@ -597,7 +617,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/DragonFly/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.neosoft.LuckyDragon;
 				PRODUCT_NAME = "Lucky Dragon";
 				SWIFT_VERSION = 5.0;

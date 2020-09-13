@@ -48,6 +48,7 @@ class IAPManager: NSObject {
     }
     
     public func restoreCompletedTransactions() {
+        print("restore purshased")
         paymentQueue.restoreCompletedTransactions()
     }
 }

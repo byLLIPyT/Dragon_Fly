@@ -134,17 +134,23 @@ class GameScene: ParentScene {
     fileprivate func spawnSpiralOfEnemies() {
         let enemyTextureAtlas1 = Assets.shared.enemy_1Atlas//SKTextureAtlas(named: "Enemy_1")
         let enemyTextureAtlas2 = Assets.shared.enemy_2Atlas//SKTextureAtlas(named: "Enemy_2")
+        let enemyTextureAtlas3 = Assets.shared.enemy_3Atlas//SKTextureAtlas(named: "Enemy_2")
+        let enemyTextureAtlas4 = Assets.shared.enemy_4Atlas//SKTextureAtlas(named: "Enemy_2")
+        let enemyTextureAtlas5 = Assets.shared.enemy_5Atlas//SKTextureAtlas(named: "Enemy_2")
+        let enemyTextureAtlas6 = Assets.shared.enemy_6Atlas//SKTextureAtlas(named: "Enemy_2")
+        
         var arrayEnemies: [Enemy] = []
-        SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2]) { [unowned self] in
+        SKTextureAtlas.preloadTextureAtlases([enemyTextureAtlas1, enemyTextureAtlas2, enemyTextureAtlas3, enemyTextureAtlas4, enemyTextureAtlas5, enemyTextureAtlas6]) { [unowned self] in
             
-            let randomNumber = Int(arc4random_uniform(2))
-            let arrayOfAtlases = [enemyTextureAtlas1, enemyTextureAtlas2]
+            let randomNumber = Int(arc4random_uniform(6))
+            print(randomNumber)
+            let arrayOfAtlases = [enemyTextureAtlas1, enemyTextureAtlas2, enemyTextureAtlas3, enemyTextureAtlas4, enemyTextureAtlas5, enemyTextureAtlas6]
             let textureAtlas = arrayOfAtlases[randomNumber]
             
             let waitAction = SKAction.wait(forDuration: 3.0)
             let spawnEnemy = SKAction.run({ [unowned self] in
                 let textureNames = textureAtlas.textureNames.sorted()
-                let texture = textureAtlas.textureNamed(textureNames[12])
+                let texture = textureAtlas.textureNamed(textureNames[4])
                 let enemy = Enemy(enemyTexture: texture)//, currentNumber: )
                 
                 enemy.position = CGPoint(x: CGFloat(arc4random_uniform(UInt32(self.size.width - 30))), y: self.size.height + 110)

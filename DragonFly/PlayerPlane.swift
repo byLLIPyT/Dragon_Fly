@@ -22,8 +22,19 @@ class PlayerPlane: SKSpriteNode {
     let animationSpriteStrides = [(13, 1, -1), (13, 26, 1), (13, 13, 1)]
     
     static func populate(at point: CGPoint) -> PlayerPlane {
-        let atlas = Assets.shared.playerPlaneAtlas
-        let playerPlaneTexture = atlas.textureNamed("airplane_3ver2_13")
+        
+        let payed = UserDefaults.standard.bool(forKey: "fullVersion")
+        var atlas = Assets.shared.playerPlaneAtlas
+        var playerPlaneTexture = atlas.textureNamed("airplane_3ver2_13")
+        if payed {
+            atlas = Assets.shared.playerPlanePremium
+            playerPlaneTexture = atlas.textureNamed("airplanePrem_3ver2_13")
+        } else {
+            atlas = Assets.shared.playerPlaneAtlas
+            playerPlaneTexture = atlas.textureNamed("airplane_3ver2_13")
+        }
+        
+        
         let playerPlane = PlayerPlane(texture: playerPlaneTexture)
         playerPlane.setScale(0.4)
         playerPlane.position = point
@@ -112,7 +123,13 @@ class PlayerPlane: SKSpriteNode {
         var array = [SKTexture]()
         for i in stride(from: _stride.0, through: _stride.1, by: _stride.2) {
             let number = String(format: "%02d", i)
-            let texture = SKTexture(imageNamed: "airplane_3ver2_\(number)")
+            let payed = UserDefaults.standard.bool(forKey: "fullVersion")
+            var texture = SKTexture(imageNamed: "airplane_3ver2_\(number)")
+            if payed {
+                texture = SKTexture(imageNamed: "airplanePrem_3ver2_\(number)")
+            } else {
+                texture = SKTexture(imageNamed: "airplane_3ver2_\(number)")
+            }
             array.append(texture)
         }
         SKTexture.preload(array) { 
